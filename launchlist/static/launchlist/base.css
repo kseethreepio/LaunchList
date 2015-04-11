@@ -31,7 +31,7 @@ td.header {
     font-weight: bold;
 }
 
-td.header_stat {
+td.header_stat, td.header_name {
     font-weight: bold;
     text-align: center;
 }
@@ -51,10 +51,10 @@ td[class^="factors"] {
     color: #AAAAAA;
     font-size: 10px;
     text-align: left;
-    width: 50%;
+    width: 55%;
 }
 
-td[class^="stat"], td[class^="rb"], td[class^="img"] {
+td[class^="stat"], td[class^="rb"], td[class^="img"], td[class^="name"] {
     text-align: center;
 }
 
@@ -141,8 +141,8 @@ body {
     margin-right: 0px;
 }
 .main-page-content {
-    margin-left: 50px;
-    width: 90%;
+    margin-left: 75px;
+    width: 85%;
     padding-bottom: 50px;
 }
 
@@ -153,7 +153,7 @@ body {
 }
 
 .contentBlurb {
-    font-size: 14px;
+    font-size: 12px;
     padding-bottom: 10px;
 }
 
