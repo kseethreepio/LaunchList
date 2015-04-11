@@ -42,6 +42,11 @@ td.header_summary {
     text-align: left;
 }
 
+td.header_cb {
+    font-weight: bold;
+    width: 30%;
+}
+
 td[class^="factors"] {
     color: #AAAAAA;
     font-size: 10px;
@@ -121,6 +126,11 @@ hr {
     width: 70%;
     margin-top: 40px;
     margin-left: 0px;
+}
+
+.footnote {
+    color: #AAAAAA;
+    font-size: 10px;
 }
 
 /* CONTENT AREAS */
