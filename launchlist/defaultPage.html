@@ -1,0 +1,37 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>LaunchPad</title>
+    <link rel="stylesheet" type="text/css" href="{% static "launchlist/base.css" %}">
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+<header>
+LaunchPad
+</header>
+
+<nav>
+Intro *---* Mission *---* Spacecraft *---* Launch Vehicle *---* Summary
+</nav>
+
+<div class="main-page-content">
+{{ content_mainPage }}
+</div>
+
+<div class="navButtons">
+    <!-- TODO: replace location address with proper page URL -->
+    <button class="back" type="button" onclick="location.href='http://www.nasa.gov'">Back</button>
+    <button class="next" type="button" onclick="location.href='http://www.nasa.gov'">Next</button>
+</div>
+
+<footer>
+This is the site footer.
+</footer>
+
+</body>	
+</html>

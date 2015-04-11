@@ -10,6 +10,7 @@ urlpatterns = patterns('',
 
     # URLs for testing
     # url(r'^admin/', include(admin.site.urls)),
+    # url(r'^testTemplate/$', view_testTemplate),
 
     # URLs for the actual user-facing site
     url(r'^$', view_root),

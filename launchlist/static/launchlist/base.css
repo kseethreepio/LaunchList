@@ -1,0 +1,144 @@
+/* BASE DECORATIONS AND MARGINS */
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+/*    font-family: "Courier New", Courier, monospace;*/
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    position: absolute;
+    background-color: #F4F4F4;
+}
+
+table {
+    margin: 0px;
+    border-collapse: collapse;
+}
+td {
+    border: 1px solid #AAAAAA;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: #00A1F1;
+}
+
+a:hover {
+    color: #F65314;
+}
+
+a:active {
+    color: #F5D61F;
+}
+
+a:visited {
+    color: #0072C6;
+} 
+
+a.footer-link {
+    color: #A8A8A8;
+    /*font-weight: bold;*/
+}
+
+a.footer-link:hover {
+    color: #F65314;
+}
+
+button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+button.back {
+    background: #838E91;
+    color: #FFFFFF;
+}
+
+button.back:hover {
+    background: #CDD1D3;
+    color: #000000;
+}
+
+button.next {
+    background: #0F9D58;
+    color: #FFFFFF;
+}
+
+button.next:hover {
+    background: #9FD7BC;
+    color: #000000;
+}
+
+hr {
+    border: 0;
+    color: #E5F5FD;
+    background: #E5F5FD;
+    height: 1px;
+    width: 70%;
+    margin-top: 40px;
+    margin-left: 0px;
+}
+
+/* CONTENT AREAS */
+body {
+    background-color: #FFFFFF;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.main-page-content {
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 90%;
+    padding-bottom: 90px;
+}
+
+.navButtons {
+    padding: 10px;
+    text-align: right;
+}
+
+/* HEADERS AND FOOTERS */
+header {
+    background-color: #E8E9DB;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 70px;
+    font-weight: bold;
+    margin-top: 0px;
+    padding: 15px;
+}
+
+nav {
+    background-color: #B9BAAF;
+    border-color: #272727;
+    border-width: 1px;
+    border-top-style: dotted;
+    border-bottom-style: dotted;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    font-size: 12px;
+    color: #94948C;
+}
+
+footer {
+    background-color: #F4F4F4;
+    border-color: #272727;
+    border-width: 1px;
+    border-top-style: dotted; 
+    color: #AAAAAA;
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+}
