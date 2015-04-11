@@ -1,3 +1,4 @@
+from django.utils.safestring import mark_safe
 from django.template import Context, Template
 from django.http import HttpResponse
 
@@ -6,7 +7,8 @@ def view_root(request):
     tCurrentView = Template(fDefaultPageTemplate.read())
     fDefaultPageTemplate.close()
     
-    content_mainPage = "This will be an awesome homepage soon."
+    fMainContent = open('launchlist/content_intro.html')
+    content_mainPage = mark_safe(fMainContent.read())
     
     html = tCurrentView.render(Context({'content_mainPage': content_mainPage}))
     return HttpResponse(html)
@@ -26,7 +28,8 @@ def view_mission(request):
     tCurrentView = Template(fDefaultPageTemplate.read())
     fDefaultPageTemplate.close()
     
-    content_mainPage = "This will be the mission page."
+    fMainContent = open('launchlist/content_mission.html')
+    content_mainPage = mark_safe(fMainContent.read())
     
     html = tCurrentView.render(Context({'content_mainPage': content_mainPage}))
     return HttpResponse(html)
@@ -36,7 +39,8 @@ def view_spacecraft(request):
     tCurrentView = Template(fDefaultPageTemplate.read())
     fDefaultPageTemplate.close()
     
-    content_mainPage = "This will be the spacecraft page."
+    fMainContent = open('launchlist/content_spacecraft.html')
+    content_mainPage = mark_safe(fMainContent.read())
     
     html = tCurrentView.render(Context({'content_mainPage': content_mainPage}))
     return HttpResponse(html)
@@ -46,7 +50,8 @@ def view_launchVehicle(request):
     tCurrentView = Template(fDefaultPageTemplate.read())
     fDefaultPageTemplate.close()
     
-    content_mainPage = "This will be the launch vehicle page."
+    fMainContent = open('launchlist/content_launchVehicle.html')
+    content_mainPage = mark_safe(fMainContent.read())
     
     html = tCurrentView.render(Context({'content_mainPage': content_mainPage}))
     return HttpResponse(html)
@@ -56,7 +61,8 @@ def view_summary(request):
     tCurrentView = Template(fDefaultPageTemplate.read())
     fDefaultPageTemplate.close()
     
-    content_mainPage = "This will be the summary page."
+    fMainContent = open('launchlist/content_summary.html')
+    content_mainPage = mark_safe(fMainContent.read())
     
     html = tCurrentView.render(Context({'content_mainPage': content_mainPage}))
     return HttpResponse(html)
