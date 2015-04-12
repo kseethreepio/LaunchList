@@ -4,7 +4,7 @@
 The size of the spacecraft determines how much scientific equipment (cameras and other instruments) can be carried, but larger spacecraft are more expensive to build, launch, and operate.
 </p>
 
-<form>
+<form id="form_spacecraft" action="/record/" method="post">
 <table>
     <tr>
         <td class="rb"></td>   <!-- Radio col header -->
@@ -33,7 +33,7 @@ The size of the spacecraft determines how much scientific equipment (cameras and
         <td class="reasoning_spacecraft">This craft can carry a heavy load of instruments and fuel, and can reach any destination in the solar system. It can observe the target for years. Because these missions are so complicated and expensive, extra effort is placed in ensuring reliable operations; this drives the cost up further.</td>
     </tr>
     <tr>
-        <td class="rb"><input type="radio" name="spacecraft" value="spacecraft1"></td>
+        <td class="rb"><input type="radio" name="spacecraft" value="spacecraft2"></td>
         <td class="img_spacecraft"><img src="/static/launchlist/images/spacecraftTest.jpg" /></td>
         <td class="name_spacecraftClass">Large</td>
         <td class="name_spacecraftName">MAVEN</td>
@@ -46,7 +46,7 @@ The size of the spacecraft determines how much scientific equipment (cameras and
         <td class="reasoning_spacecraft">Same as the medium probe, but with more fuel for more flexible mission planning.</td>
     </tr>
     <tr>
-        <td class="rb"><input type="radio" name="spacecraft" value="spacecraft1"></td>
+        <td class="rb"><input type="radio" name="spacecraft" value="spacecraft3"></td>
         <td class="img_spacecraft"><img src="/static/launchlist/images/spacecraftTest.jpg" /></td>
         <td class="name_spacecraftClass">Medium</td>
         <td class="name_spacecraftName">MarsExpress</td>
@@ -59,7 +59,7 @@ The size of the spacecraft determines how much scientific equipment (cameras and
         <td class="reasoning_spacecraft">The standard interplanetary probe; the famous Voyager probes are in this size class. It carries a variety of instruments and multiple antennas for transmitting data back to Earth.</td>
     </tr>
     <tr>
-        <td class="rb"><input type="radio" name="spacecraft" value="spacecraft1"></td>
+        <td class="rb"><input type="radio" name="spacecraft" value="spacecraft4"></td>
         <td class="img_spacecraft"><img src="/static/launchlist/images/spacecraftTest.jpg" /></td>
         <td class="name_spacecraftClass">Small</td>
         <td class="name_spacecraftName">LADEE</td>
@@ -72,7 +72,7 @@ The size of the spacecraft determines how much scientific equipment (cameras and
         <td class="reasoning_spacecraft">This is small enough to rideshare on a large booster, or it can be launched on its own. It is quick to build, but carries only a few instruments and has a relatively short lifespan.</td>
     </tr>
     <tr>
-        <td class="rb"><input type="radio" name="spacecraft" value="spacecraft1"></td>
+        <td class="rb"><input type="radio" name="spacecraft" value="spacecraft5"></td>
         <td class="img_spacecraft"><img src="/static/launchlist/images/spacecraftTest.jpg" /></td>
         <td class="name_spacecraftClass">CubeSat</td>
         <td class="name_spacecraftName">6U</td>
@@ -85,6 +85,6 @@ The size of the spacecraft determines how much scientific equipment (cameras and
         <td class="reasoning_spacecraft">These minimalist spacecraft are designed to hitch a ride with larger craft, typically as a demonstration of some untested technology. This particular cubesat is fitted with a solar sail, a camera, and a radio with just enough power to be heard from a near-earth asteroid.</td>
     </tr>
 </table>
-</form>
+<!-- </form> -->
 
 <span class="footnote">*Maximum mission travel time; travel time should not exceed this.</span>

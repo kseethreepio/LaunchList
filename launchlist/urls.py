@@ -13,10 +13,12 @@ urlpatterns = patterns('',
     # url(r'^testTemplate/$', view_testTemplate),
 
     # URLs for the actual user-facing site
-    url(r'^$', view_root),
+    url(r'^$', view_intro),
     url(r'^intro/$', view_intro),
     url(r'^mission/$', view_mission),
     url(r'^spacecraft/$', view_spacecraft),
     url(r'^vehicle/$', view_launchVehicle),
-    url(r'^summary/$', view_summary)
+    url(r'^summary/$', view_summary),
+    url(r'^record/$', recordInput),
+    url(r'^test/$', view_test),
 )

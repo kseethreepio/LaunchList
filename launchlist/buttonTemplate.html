@@ -1,6 +1,9 @@
 {% if regular_page %}   <!-- Meaning a page that has a back and fwd button -->
 <button class="back" type="button" onclick="location.href='{{ backURL }}'">Back</button>
-<button class="next" type="button" onclick="location.href='{{ nextURL }}'">Next</button>
+<button class="next" type="submit" onclick="location.href='{{ nextURL }}'">Next</button>
+</form>
+<!-- <button class="next" type="button" onclick="location.href='{{ nextURL }}'">Next</button> -->
+<!-- <button class="next" type="button" onclick="document.formname.submit();location.href='{{ nextURL }}">Next</button> -->
 {% endif %}
 
 {% if starting_page %}

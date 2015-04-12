@@ -24,7 +24,11 @@ LaunchPad
 </nav>
 
 <div class="main-page-content">
-{{ content_mainPage }}
+    <form id="form_{{ form_name }}" action="/record/" method="post">
+    <!-- <form id="form_{{ form_name }}" method="post">   <!-- navButtons will close the form -->
+    {% csrf_token %}
+    
+    {{ content_mainPage }}
 </div>
 
 <div class="navButtons">

@@ -1,9 +1,5 @@
 <h3>Choose a launch vehicle.</h3>
-<head>
-    <title>LaunchPad</title>
-    <link rel="stylesheet" type="text/css" href="static/launchlist/base.css">
-    <meta charset="utf-8">
-</head>
+
 <p class="contentBlurb">
 It’s now time to select a launch vehicle! If you picked a large spacecraft, you will need to buy a dedicated launch vehicle. If you picked a smaller spacecraft, you have the option to launch rideshare. This means that you launch alongside a larger spacecraft. It’s much cheaper, but you don’t get to control where you go, so the time required to get to your target may be much more.
 <br />
@@ -14,7 +10,6 @@ Evaluate the launch vehicles below based upon cost (shown) and the capacity to G
 
 <h5>Primary launch</h5>
 
-<form name="vehicle_primaryLaunch">
 <table class="primaryLaunch">
     <tr>
         <td class="rb"></td>   <!-- Radio col header -->
@@ -26,7 +21,7 @@ Evaluate the launch vehicles below based upon cost (shown) and the capacity to G
     </tr>
     <tr>
         <td class="rb"><input type="radio" name="launchVehicle" value="lv1"></td>
-        <td class="img_launchVehicle"><img src="static/launchlist/images/AtlasV.jpg" style="height:500px; width:inherit;"  alt="AtlasV"></td>
+        <td class="img_launchVehicle"><img src="/static/launchlist/images/AtlasV.jpg" style="height:500px; width:inherit;"  alt="AtlasV"></td>
         <td class="name_vehicle">Atlas V 401</td>
         <td class="desc_launchVehicle">The Atlas V 401 is a U.S. launch vehicle operated by the United Launch Alliance (ULA). The 401 designation shows that the vehicle has 4m in diameter fairing (4), zero solid rocket booster add-ons (0) and one (1) RL-10 engine on the Centaur upper stage.</td>
         <td class="stat_lvCost">200</td>
@@ -34,7 +29,7 @@ Evaluate the launch vehicles below based upon cost (shown) and the capacity to G
     </tr>
     <tr>
         <td class="rb"><input type="radio" name="launchVehicle" value="lv2"></td>
-        <td class="img_launchVehicle"><img src="static/launchlist/images/Falcon9.jpg" style="height:500px; width:inherit;"></td>
+        <td class="img_launchVehicle"><img src="/static/launchlist/images/Falcon9.jpg" style="height:500px; width:inherit;"></td>
         <td class="name_vehicle">Falcon 9</td>
         <td class="desc_launchVehicle">The Falcon 9 is a U.S. launch vehicle operated by SpaceX. It has a 5.2 m fairing and no solid rocket booster. While it is a new vehicle, it has had an excellent success rate so far. It uses two stages of liquid oxygen and kerosene.</td>
         <td class="stat_lvCost">65</td>
@@ -42,7 +37,7 @@ Evaluate the launch vehicles below based upon cost (shown) and the capacity to G
     </tr>
     <tr>
         <td class="rb"><input type="radio" name="launchVehicle" value="lv3"></td>
-        <td class="img_launchVehicle"><img src="static/launchlist/images/D4H.jpg"  style="height:500px; width:inherit;"></td>
+        <td class="img_launchVehicle"><img src="/static/launchlist/images/D4H.jpg"  style="height:500px; width:inherit;"></td>
         <td class="name_vehicle">Delta 4 Heavy</td>
         <td class="desc_launchVehicle">The Delta IV Heavy is a U.S. launch vehicle operated by the United Launch Alliance (ULA). The heavy version has a 5m fairing and three core liquid rocket boosters. It uses liquid hydrogen and liquid oxygen, and is the largest launch vehicle operating today.</td>
         <td class="stat_lvCost">500</td>
@@ -50,7 +45,7 @@ Evaluate the launch vehicles below based upon cost (shown) and the capacity to G
     </tr>
     <tr>
         <td class="rb"><input type="radio" name="launchVehicle" value="lv4"></td>
-        <td class="img_launchVehicle"><img src="static/launchlist/images/Ariane5.jpg" style="height:500px; width:inherit;"/></td>
+        <td class="img_launchVehicle"><img src="/static/launchlist/images/Ariane5.jpg" style="height:500px; width:inherit;"/></td>
         <td class="name_vehicle">Ariane 5</td>
         <td class="desc_launchVehicle">The Ariane 5 is an European launch vehicle operated by Arianespace. It has a main liquid stage powered by liquid hydrogen and liquid oxygen, and two power solid boosters.</td>
         <td class="stat_lvCost">200</td>
@@ -67,11 +62,11 @@ Evaluate the launch vehicles below based upon cost (shown) and the capacity to G
     </tr>
     -->
 </table>
-</form>
+
 
 <h5>Secondary launch</h5>
 
-<form name="vehicle_secondaryLaunch">
+
 <table class="secondaryLaunch">
     <tr>
         <td class="rb"></td>   <!-- Radio col header -->
@@ -82,8 +77,8 @@ Evaluate the launch vehicles below based upon cost (shown) and the capacity to G
         <td class="header_stat">Capacity to GTO (kg)</td>
     </tr>
     <tr>
-        <td class="rb"><input type="radio" name="launchVehicle" value="lv1"></td>
-        <td class="img_launchVehicle"><img src="static/launchlist/images/GTO.png" style="height:300px; width:inherit;"/></td>
+        <td class="rb"><input type="radio" name="launchVehicle" value="lv5"></td>
+        <td class="img_launchVehicle"><img src="/static/launchlist/images/GTO.png" style="height:300px; width:inherit;"/></td>
         <td class="name_vehicle">Geosynchronous Transfer Orbit (GTO)</td>
         <td class="desc_launchVehicle">Geo-transfer orbit is a common orbit for geosynchronous (GSO) satellites to launch into. In geosynchronous orbit, the satellites stay locked to one point on the Earth, so it’s useful for communication and GPS satellites. GTO is an orbit with the apogee (the highest altitude) the same as GSO, but the perigee is lower. Satellites must use propulsion to get to GSO from GTO. 
         </td>
@@ -91,8 +86,8 @@ Evaluate the launch vehicles below based upon cost (shown) and the capacity to G
         <td class="stat_lvC2GTO">500</td>
     </tr>
     <tr>
-        <td class="rb"><input type="radio" name="launchVehicle" value="lv2"></td>
-        <td class="img_launchVehicle"><img src="static/launchlist/images/SLS.JPG" style="height:300px; width:inherit;"/></td>
+        <td class="rb"><input type="radio" name="launchVehicle" value="lv6"></td>
+        <td class="img_launchVehicle"><img src="/static/launchlist/images/SLS.JPG" style="height:300px; width:inherit;"/></td>
         <td class="name_vehicle">SLS EM-1</td>
         <td class="desc_launchVehicle">TThe acronym is the mission designation for the first Space Launch System (SLS) flight: Exploration Mission 1. It will take some secondary payloads on a lunar flyby. However, the SLS has not launched yet, so it is probably the most high-risk for slipping.</td>
         <td class="stat_lvCost">200</td>
@@ -126,4 +121,4 @@ Evaluate the launch vehicles below based upon cost (shown) and the capacity to G
     </tr>
     -->
 </table>
-</form>
+<!-- </form> -->
