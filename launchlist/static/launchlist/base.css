@@ -14,16 +14,20 @@ table {
     margin: 0px;
     border-collapse: collapse;
     width: 100%;
-    font-size: 10px;
+    font-size: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 table.summary_selections {
     width: 70%;
     margin-left: 50%;
 }
-
+tr {
+    border: 8px solid#DDDDDD;
+}
 td {
-    border: 1px solid #AAAAAA;
+    border: 4px solid #DDDDDD;
     padding: 10px;
 }
 
@@ -54,14 +58,22 @@ td[class^="factors"] {
     width: 55%;
 }
 
-td[class^="stat"], td[class^="rb"], td[class^="img"], td[class^="name"] {
+td[class^="stat"], td[class^="img"], td[class^="name"], td[class^="desc"] {
     text-align: center;
+    vertical-align: top;
+}
+td[class^="rb"]{
+    vertical-align: center;
+}
+
+.target_image {
+height: inherit;
+width: inherit;
 }
 
 td[class^="desc"] {
     width: 45%;
 }
-
 a {
     text-decoration: none;
 }
@@ -123,9 +135,10 @@ hr {
     color: #E5F5FD;
     background: #E5F5FD;
     height: 1px;
-    width: 70%;
+    width: 100%;
     margin-top: 40px;
     margin-left: 0px;
+    margin-right: 0px;
 }
 
 .footnote {
@@ -135,14 +148,16 @@ hr {
 
 /* CONTENT AREAS */
 body {
-    background-color: #FFFFFF;
+    background-color: #000000;
     margin-top: 0px;
-    margin-left: 0px;
+    color: #DDDDDD;
     margin-right: 0px;
+    margin-left: 0px;
+
 }
 .main-page-content {
-    margin-left: 75px;
-    width: 85%;
+
+    width: 100%;
     padding-bottom: 50px;
 }
 
