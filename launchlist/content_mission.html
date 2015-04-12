@@ -1,51 +1,63 @@
-<h3>Choose a mission target.</h3>
+<head>
+    <title>Choose Your Target</title>
+    <link rel="stylesheet" type="text/css" href="base.css">
+    <meta charset="utf-8">
+</head>
 
+<h3><b><i>Choose a mission target</b></i></h3>
 <p class="contentBlurb">
-Here's a blurb about why it's useful and interesting to pick a mission for your project, and where it fits in with everything else you need to do.
+Choosing a target is important because otherwise you won't know which way to point your rocket.
 </p>
 
 <form>
 <table>
     <tr>
         <td></td>   <!-- Radio col header -->
-        <td></td>   <!-- Image col header -->
+        <td class="header_name">Best Available Image</td>   <!-- Image col header -->
         <td class="header_name">Name</td>
         <td class="header">Description</td>
         <td class="header_stat">Delta-V (km/s)</td>
+        <td class="header_stat">Location</td>      <!-- Location Image col header -->
         <td class="header_stat">Science Score (pts)</td>
     </tr>
     <tr>
         <td class="rb"><input type="radio" name="mission" value="mission1"></td>
-        <td class="img_mission"><img src="/static/launchlist/images/missionTest.jpg" /></td>
-        <td class="name_missionTarget">Apollo Asteroid: 101955 Benu</td>
-        <td class="desc_spacecraft">This asteroid, discovered in 1999, is a 500-meter asteroid, which is very close to earth. It is relatively close to earth and has a very similar orbit. This makes it easy to get to, but because it crosses the earth’s path it is also a potential threat. The proximity to the sun makes the likelihood of discovering water ice near the surface low, you’d need to look hard to have any chance of finding water here.</td>
+        <td class="img_mission"><img src="bennu.png" style="height:300px; width:inherit;"></td>
+        <td class="name_missionTarget">101955 Benu</td>
+        <td class="desc_spacecraft">Discovered in 1999, Bennu is one of Earth’s closest companions and easiest asteroids to get to in the solar system. However because its orbit crosses the earth’s path it is also a potential threat. The proximity to the sun makes the likelihood of discovering water ice near the surface low, you’d need to look hard to have any chance of finding water here.</td>
         <td class="stat_mDeltaV">1.25</td>
-        <td class="stat_mScienceScore">2</td>
+        <td class="stat_map"><img src="http://i.imgur.com/pUldxip.png" alt="101955 Bennu Map" style="height:300px; width:inherit;"></td>
+        <td class="stat_mScienceScore">1</td>
     </tr>
     <tr>
         <td class="rb"><input type="radio" name="mission" value="mission2"></td>
-        <td class="img_mission"><img src="/static/launchlist/images/missionTest.jpg" /></td>
-        <td class="name_missionTarget">Apollo Asteroid: 101955 Benu</td>
-        <td class="desc_spacecraft">This is a description of a mission. It will tend to be rather lengthy.</td>
-        <td class="stat_mDeltaV">1.25</td>
-        <td class="stat_mScienceScore">8</td>
+        <td class="img_mission"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Phobos_colour_2008.jpg/613px-Phobos_colour_2008.jpg" alt="Phobos" style="height:300px; width:inherit;"></td>
+        <td class="name_missionTarget">Phobos</td>
+        <td class="desc_spacecraft">Phobos used to be an asteroid, but was captured by Mars and is now a moon. It has long inspired science fiction writers with the promise of vast quantities of ice under its dusty surface. It is a large object and holds many secrets, and could be a stopping point that humans take along the path to Mars.</td>
+        <td class="stat_mDeltaV">4.1</td>
+        <td class="stat_map"><img src="http://i.imgur.com/mNiHYrS.png" alt="Phobos" style="height:300px; width:inherit;"></td>
+        <td class="stat_mScienceScore">4</td>
     </tr>
     <tr>
         <td class="rb"><input type="radio" name="mission" value="mission3"></td>
-        <td class="img_mission"><img src="/static/launchlist/images/missionTest.jpg" /></td>
-        <td class="name_missionTarget">Apollo Asteroid: 101955 Benu</td>
-        <td class="desc_spacecraft">This is a description of a mission. It will tend to be rather lengthy.</td>
-        <td class="stat_mDeltaV">1.25</td>
-        <td class="stat_mScienceScore">8</td>
+        <td class="img_mission"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Ceres_Rotation.jpg/676px-Ceres_Rotation.jpg" style="height:300px; width:inherit;"></td>
+        <td class="name_missionTarget">Ceres</td>
+        <td class="desc_spacecraft">The largest non-planet in the solar system, and has been seen emitting water vapor in telescope observations. There have been images of a mysterious bright spot captured by Hubble the the Dawn Mission. Is it ice?</td>
+        <td class="stat_mDeltaV">6.1</td>
+        <td class="stat_map"><img src="http://imgur.com/0b2x4HP.png" alt="Ceres" style="height:300px; width:inherit;">
+        <td class="stat_mScienceScore">7</td>
     </tr>
     <tr>
         <td class="rb"><input type="radio" name="mission" value="mission4"></td>
-        <td class="img_mission"><img src="/static/launchlist/images/missionTest.jpg" /></td>
-        <td class="name_missionTarget">Apollo Asteroid: 101955 Benu</td>
-        <td class="desc_spacecraft">This is a description of a mission. It will tend to be rather lengthy.</td>
-        <td class="stat_mDeltaV">1.25</td>
-        <td class="stat_mScienceScore">8</td>
+        <td class="img_mission"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/624Hektor-LB1-mag15.jpg/665px-624Hektor-LB1-mag15.jpg" style="height:300px; width:inherit;"></td>
+        <td class="name_missionTarget">624 Hektor</td>
+        <td class="desc_spacecraft">
+This asteroid orbits the L4 Sun-Jupiter lagrange point, at an average distance of 781,000,000 km from the sun. It is the largest of the trojan asteroids, and is also one of the most elongated bodies in the solar system, with a minor diameter of 200 km and a major diameter of 370 km. It even has a small ‘moon’ of its own. Not much else is known about this mysterious body, although its distance from the sun makes it a likely candidate for finding water ice.</td>
+        <td class="stat_mDeltaV">7.7</td>
+        <td class="stat_map"><img src="http://i.imgur.com/FClFwXQ.png" alt="Ceres" style="height:300px; width:inherit;">
+        <td class="stat_mScienceScore">10</td>
     </tr>
+    <!-- BONUS ROW
     <tr>
         <td class="rb"><input type="radio" name="mission" value="mission5"></td>
         <td class="img_mission"><img src="/static/launchlist/images/missionTest.jpg" /></td>
@@ -54,5 +66,6 @@ Here's a blurb about why it's useful and interesting to pick a mission for your 
         <td class="stat_mDeltaV">1.25</td>
         <td class="stat_mScienceScore">8</td>
     </tr>
+    -->
 </table>
 </form>
