@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import * 
 from launchlist.models import *
 from launchlist.itemdict import *
+from math import *
 
 buttonDict = {
     'root': [["next", "/mission/"], ["back", None], ],
@@ -132,6 +133,13 @@ def view_summary(request):
     
     navButtons = create_nav_buttons("summary")
     
+    total_science_score = max(dict_missions[selection_mission]['science'], dict_spacecraft[selection_spacecraft]['science'])
+    total_science_score_result = str(total_science_score) + " points"
+    total_cost = float(dict_spacecraft[selection_spacecraft]['cost'] + dict_launchvehicles[selection_launchvehicle]['cost'])/1000
+    total_cost_result = str(total_cost) + " $M"
+    total_time = (float(dict_missions[selection_mission]['deltaV'] * log(dict_spacecraft[selection_spacecraft]['mass']*400)) / dict_launchvehicles[selection_launchvehicle]['gto']) + dict_spacecraft[selection_spacecraft]['buildtime']
+    total_time_result = str(total_science_score) + " years"
+    
     templateLoadParams = {
         'navButtons': navButtons[0],
         'selection_missionTarget': selection_mission.replace("mission","Mission #"),   # Make the summary text a little nicer,
@@ -144,7 +152,10 @@ def view_summary(request):
         'selected_spacecraftMass': dict_spacecraft[selection_spacecraft]['mass'],
         'selected_spacecraftBT': dict_spacecraft[selection_spacecraft]['buildtime'],
         'selected_lvCost': dict_launchvehicles[selection_launchvehicle]['cost'],
-        'selected_lvGTO': dict_launchvehicles[selection_launchvehicle]['gto']
+        'selected_lvGTO': dict_launchvehicles[selection_launchvehicle]['gto'],
+        'total_science_score': total_science_score_result,
+        'total_cost': total_cost_result,
+        'total_time': total_time_result
     }
     
     html = tCurrentView.render(RequestContext(request, templateLoadParams))

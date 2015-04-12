@@ -20,9 +20,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = os.environ.get('LAUNCHLIST_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = False   # Turn on before running locally
 
-TEMPLATE_DEBUG = False
+TEMPLATE_DEBUG = False   # Turn on before running locally
 
 ALLOWED_HOSTS = []
 
@@ -63,7 +63,7 @@ DATABASES = {
         'NAME': 'de7a2ar2ivl7mg',
         'HOST': 'ec2-107-20-159-103.compute-1.amazonaws.com',
         'PORT': '5432',
-        'USER': os.environ.get('DB_USER'),
+        'USER': os.environ.get('DB_USER'),   # Before running locally, switch this out for literal user/pwd, and not use env var
         'PASSWORD': os.environ.get('DB_PASSWORD'),
     }
 }
