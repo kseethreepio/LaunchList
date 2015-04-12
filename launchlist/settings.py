@@ -20,9 +20,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = os.environ.get('LAUNCHLIST_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True   # Turn on before running locally
+DEBUG = False   # Turn on before running locally
 
-TEMPLATE_DEBUG = True   # Turn on before running locally
+TEMPLATE_DEBUG = False   # Turn on before running locally
 
 ALLOWED_HOSTS = []
 
