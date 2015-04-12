@@ -4,6 +4,7 @@ from django.template.context_processors import csrf
 from django.http import HttpResponse
 from django.shortcuts import * 
 from launchlist.models import *
+from launchlist.itemdict import *
 
 buttonDict = {
     'root': [["next", "/mission/"], ["back", None], ],
@@ -119,8 +120,11 @@ def view_launchVehicle(request):
 
 def view_summary(request):
     selection_mission = request.session['missiontarget']
+    selection_mission = selection_mission.replace("'","")
     selection_spacecraft = request.session['spacecraft']
+    selection_spacecraft = selection_spacecraft.replace("'","")
     selection_launchvehicle = request.session['launchVehicle']
+    selection_launchvehicle = selection_launchvehicle.replace("'","")
 
     fDefaultPageTemplate = open('launchlist/defaultSummary.html')
     tCurrentView = Template(fDefaultPageTemplate.read())
@@ -128,7 +132,22 @@ def view_summary(request):
     
     navButtons = create_nav_buttons("summary")
     
-    html = tCurrentView.render(RequestContext(request, {'navButtons': navButtons[0], 'selection_missionTarget': selection_mission, 'selection_spacecraft': selection_spacecraft, 'selection_lv': selection_launchvehicle}))
+    templateLoadParams = {
+        'navButtons': navButtons[0],
+        'selection_missionTarget': selection_mission.replace("mission","Mission #"),   # Make the summary text a little nicer,
+        'selection_spacecraft': selection_spacecraft.replace("spacecraft","Spacecraft #"),
+        'selection_lv': selection_launchvehicle.replace("lv","Launch Vehicle #"),
+        'selected_missionScience': dict_missions[selection_mission]['science'],
+        'selected_missionDeltaV': dict_missions[selection_mission]['deltaV'],
+        'selected_spacecraftScience': dict_spacecraft[selection_spacecraft]['science'],
+        'selected_spacecraftCost': dict_spacecraft[selection_spacecraft]['cost'],
+        'selected_spacecraftMass': dict_spacecraft[selection_spacecraft]['mass'],
+        'selected_spacecraftBT': dict_spacecraft[selection_spacecraft]['buildtime'],
+        'selected_lvCost': dict_launchvehicles[selection_launchvehicle]['cost'],
+        'selected_lvGTO': dict_launchvehicles[selection_launchvehicle]['gto']
+    }
+    
+    html = tCurrentView.render(RequestContext(request, templateLoadParams))
     return HttpResponse(html)
 
 def view_test(request):

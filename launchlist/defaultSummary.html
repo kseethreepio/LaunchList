@@ -27,13 +27,27 @@ LaunchPad
 <h3>Mission analysis complete.</h3>
 
 <p class="contentBlurb">
-Here's a summary of your selections:
+Here's a summary of your selections. The stats called out factored into your final score:
 </p>
 
 <ul>
     <li>Mission target: {{ selection_missionTarget }}</li>
+        <ul>
+            <li>Science: {{ selected_missionScience }}</li>
+            <li>Delta-V: {{ selected_missionDeltaV }}</li>
+        </ul>
     <li>Spacecraft: {{ selection_spacecraft }}</li>
+        <ul>
+            <li>Science: {{ selected_spacecraftScience }}</li>
+            <li>Cost: {{ selected_spacecraftCost }}</li>
+            <li>Mass: {{ selected_spacecraftMass }}</li>
+            <li>Build time: {{ selected_spacecraftBT }}</li>
+        </ul>
     <li>Launch vehicle: {{ selection_lv }}</li>
+        <ul>
+            <li>Cost: {{ selected_lvCost }}</li>
+            <li>GTO: {{ selected_lvGTO }}</li>
+        </ul>
 </ul>
 
 <p class="contentBlurb">
