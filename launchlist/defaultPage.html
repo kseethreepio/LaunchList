@@ -16,7 +16,11 @@ LaunchPad
 </header>
 
 <nav>
-Intro *---* Mission *---* Spacecraft *---* Launch Vehicle *---* Summary
+<a href="/">Intro</a> *---* 
+<a href="/mission/">Mission</a> *---* 
+<a href="/spacecraft/">Spacecraft</a> *---* 
+<a href="/vehicle/">Launch Vehicle</a> *---* 
+<a href="/summary/">Summary</a>
 </nav>
 
 <div class="main-page-content">
@@ -25,8 +29,9 @@ Intro *---* Mission *---* Spacecraft *---* Launch Vehicle *---* Summary
 
 <div class="navButtons">
     <!-- TODO: replace location address with proper page URL -->
-    <button class="back" type="button" onclick="location.href='http://www.nasa.gov'">Back</button>
-    <button class="next" type="button" onclick="location.href='http://www.nasa.gov'">Next</button>
+    <!-- <button class="back" type="button" onclick="location.href='/mission/'">Back</button>
+    <button class="next" type="button" onclick="location.href='/spacecraft/'">Next</button> -->
+    {{ navButtons }}
 </div>
 
 <footer>

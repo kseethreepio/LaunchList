@@ -1,0 +1,13 @@
+{% if regular_page %}   <!-- Meaning a page that has a back and fwd button -->
+<button class="back" type="button" onclick="location.href='{{ backURL }}'">Back</button>
+<button class="next" type="button" onclick="location.href='{{ nextURL }}'">Next</button>
+{% endif %}
+
+{% if starting_page %}
+<button class="next" type="button" onclick="location.href='{{ nextURL }}'">Start</button>
+{% endif %}
+
+{% if ending_page %}
+<button class="back" type="button" onclick="location.href='{{ backURL }}'">Back</button>
+<button class="next" type="button" onclick="location.href='/intro/'">Start Over</button>
+{% endif %}
