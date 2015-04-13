@@ -120,46 +120,55 @@ def view_launchVehicle(request):
     return HttpResponse(html)
 
 def view_summary(request):
-    selection_mission = request.session['missiontarget']
-    selection_mission = selection_mission.replace("'","")
-    selection_spacecraft = request.session['spacecraft']
-    selection_spacecraft = selection_spacecraft.replace("'","")
-    selection_launchvehicle = request.session['launchVehicle']
-    selection_launchvehicle = selection_launchvehicle.replace("'","")
+    try:
+        selection_mission = request.session['missiontarget']
+        selection_mission = selection_mission.replace("'","")
+        selection_spacecraft = request.session['spacecraft']
+        selection_spacecraft = selection_spacecraft.replace("'","")
+        selection_launchvehicle = request.session['launchVehicle']
+        selection_launchvehicle = selection_launchvehicle.replace("'","")
 
-    fDefaultPageTemplate = open('launchlist/defaultSummary.html')
-    tCurrentView = Template(fDefaultPageTemplate.read())
-    fDefaultPageTemplate.close()
+        fDefaultPageTemplate = open('launchlist/defaultSummary.html')
+        tCurrentView = Template(fDefaultPageTemplate.read())
+        fDefaultPageTemplate.close()
     
-    navButtons = create_nav_buttons("summary")
+        navButtons = create_nav_buttons("summary")
     
-    total_science_score = max(dict_missions[selection_mission]['science'], dict_spacecraft[selection_spacecraft]['science'])
-    total_science_score_result = str(total_science_score) + " points"
-    total_cost = float(dict_spacecraft[selection_spacecraft]['cost'] + dict_launchvehicles[selection_launchvehicle]['cost'])/1000
-    total_cost_result = str(total_cost) + " $M"
-    total_time = (float(dict_missions[selection_mission]['deltaV'] * log(dict_spacecraft[selection_spacecraft]['mass']*400)) / dict_launchvehicles[selection_launchvehicle]['gto']) + dict_spacecraft[selection_spacecraft]['buildtime']
-    total_time_result = str(total_science_score) + " years"
+        total_science_score = max(dict_missions[selection_mission]['science'], dict_spacecraft[selection_spacecraft]['science'])
+        total_science_score_result = str(total_science_score) + " points"
+        total_cost = dict_spacecraft[selection_spacecraft]['cost'] + dict_launchvehicles[selection_launchvehicle]['cost']
+        total_cost_result = str(total_cost) + " $M"
+        total_time = (float(dict_missions[selection_mission]['deltaV'] * log(dict_spacecraft[selection_spacecraft]['mass']*400)) / dict_launchvehicles[selection_launchvehicle]['gto']) + dict_spacecraft[selection_spacecraft]['buildtime']
+        total_time_result = str(total_science_score) + " years"
+        
+        if (dict_launchvehicles[selection_launchvehicle]['gto'] < dict_spacecraft[selection_spacecraft]['mass']):
+            gto_selection_message = mark_safe("<span class=\"error\">Error: Your spacecraft mass is too large for your launch vehicle. Please pick another.</span>")
+        else:
+            gto_selection_message = dict_launchvehicles[selection_launchvehicle]['gto']
     
-    templateLoadParams = {
-        'navButtons': navButtons[0],
-        'selection_missionTarget': selection_mission.replace("mission","Mission #"),   # Make the summary text a little nicer,
-        'selection_spacecraft': selection_spacecraft.replace("spacecraft","Spacecraft #"),
-        'selection_lv': selection_launchvehicle.replace("lv","Launch Vehicle #"),
-        'selected_missionScience': dict_missions[selection_mission]['science'],
-        'selected_missionDeltaV': dict_missions[selection_mission]['deltaV'],
-        'selected_spacecraftScience': dict_spacecraft[selection_spacecraft]['science'],
-        'selected_spacecraftCost': dict_spacecraft[selection_spacecraft]['cost'],
-        'selected_spacecraftMass': dict_spacecraft[selection_spacecraft]['mass'],
-        'selected_spacecraftBT': dict_spacecraft[selection_spacecraft]['buildtime'],
-        'selected_lvCost': dict_launchvehicles[selection_launchvehicle]['cost'],
-        'selected_lvGTO': dict_launchvehicles[selection_launchvehicle]['gto'],
-        'total_science_score': total_science_score_result,
-        'total_cost': total_cost_result,
-        'total_time': total_time_result
-    }
+        templateLoadParams = {
+            'navButtons': navButtons[0],
+            'selection_missionTarget': selection_mission.replace("mission","Mission #"),   # Make the summary text a little nicer,
+            'selection_spacecraft': selection_spacecraft.replace("spacecraft","Spacecraft #"),
+            'selection_lv': selection_launchvehicle.replace("lv","Launch Vehicle #"),
+            'selected_missionScience': dict_missions[selection_mission]['science'],
+            'selected_missionDeltaV': dict_missions[selection_mission]['deltaV'],
+            'selected_spacecraftScience': dict_spacecraft[selection_spacecraft]['science'],
+            'selected_spacecraftCost': dict_spacecraft[selection_spacecraft]['cost'],
+            'selected_spacecraftMass': dict_spacecraft[selection_spacecraft]['mass'],
+            'selected_spacecraftBT': dict_spacecraft[selection_spacecraft]['buildtime'],
+            'selected_lvCost': dict_launchvehicles[selection_launchvehicle]['cost'],
+            'selected_lvGTO': gto_selection_message,
+            'total_science_score': total_science_score_result,
+            'total_cost': total_cost_result,
+            'total_time': total_time_result
+        }
     
-    html = tCurrentView.render(RequestContext(request, templateLoadParams))
-    return HttpResponse(html)
+        html = tCurrentView.render(RequestContext(request, templateLoadParams))
+        return HttpResponse(html)
+        
+    except KeyError:
+        return HttpResponse("Please click the 'Back' button in your browser and make a selection on the previous page.")
 
 def view_test(request):
     fDefaultPageTemplate = open('launchlist/defaultPage.html')

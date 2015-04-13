@@ -7,7 +7,7 @@ html {
 *//*    font-family: "Courier New", Courier, monospace;*/
     font-family: Verdana, Arial, Helvetica, sans-serif;
     position: absolute;
-    background-color: #F4F4F4;
+    background-color: #000000;
 }
 
 table {
@@ -154,9 +154,13 @@ hr {
     font-size: 10px;
 }
 
+.error {
+    color: #FF0000;
+}
+
 /* CONTENT AREAS */
 body {
-/*    width: inherit;*/
+    width: 100%;
     background-color: #000000;
     margin-top: 0px;
     color: #DDDDDD;
